@@ -15,7 +15,7 @@ axios
   .then(response => {
     console.log(response.data);
     response.data["topics"].forEach(element => {
-      tabs.appendChild(Tab(element));
+      tabs.appendChild(Tab (element));
     });
   })
   .catch(error => {
@@ -25,7 +25,7 @@ axios
 function Tab(data) {
   const newTab = document.createElement("div");
 
-  newTab.classList.add("Tab");
+  newTab.classList.add("tab");
 
   newTab.textContent = data;
 
