@@ -15,7 +15,7 @@ axios
   .then(response => {
     console.log(response.data);
     response.data["topics"].forEach(element => {
-      tabs.appendChild(Tab (element));
+      tabs.appendChild(Tab(element));
     });
   })
   .catch(error => {
