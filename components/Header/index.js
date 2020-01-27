@@ -32,4 +32,4 @@ function Header() {
 
 const headerContainer = document.querySelector(".header-container");
 
-heanderContainer.append(Header());
+headerContainer.append(Header());
