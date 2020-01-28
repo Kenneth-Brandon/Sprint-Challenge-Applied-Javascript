@@ -11,25 +11,25 @@
 
 function Header() {
   const newHeader = document.createElement("div");
-    date = document.createElement("span");
-    title = document.createElement("h1");
-    temp = document.createElement("span");
+  date = document.createElement("span");
+  title = document.createElement("h1");
+  temp = document.createElement("span");
 
   newHeader.classList.add("header");
   date.classList.add("date");
   temp.classList.add("temp");
 
-  newHeader.appendChild(date);
-  newHeader.appendChild(title);
-  newHeader.appendChild(temp);
+  newHeader.append(date);
+  newHeader.append(title);
+  newHeader.append(temp);
 
-  date.textContent = "November 10, 2019";
+  date.textContent = "March 28,2019";
   title.textContent = "Lambda Times";
-  temp.textContent = "74°";
+  temp.textContent = "98°";
 
   return newHeader;
 }
 
 const headerContainer = document.querySelector(".header-container");
 
-headerContainer.appendChild(Header());
+headerContainer.append(Header());

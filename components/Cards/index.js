@@ -23,54 +23,50 @@ const cardContainer = document.querySelector(".cards-container");
 axios
   .get(`https://lambda-times-backend.herokuapp.com/articles`)
   .then(response => {
-    // console.log(response.data);
-    // console.log(response.data['articles']);
-    // console.log(response.data['bootstrap']);
-
     response.data.articles.javascript.forEach(element => {
-      cardContainer.appendChild(article(element));
+      cardContainer.append(article(element));
     });
 
     response.data.articles.bootstrap.forEach(element => {
-      cardContainer.appendChild(article(element));
+      cardContainer.append(article(element));
     });
 
     response.data.articles.technology.forEach(element => {
-      cardContainer.appendChild(article(element));
+      cardContainer.append(article(element));
     });
 
     response.data.articles.jquery.forEach(element => {
-      cardContainer.appendChild(article(element));
+      cardContainer.append(article(element));
     });
 
     response.data.articles.node.forEach(element => {
-      cardContainer.appendChild(article(element));
+      cardContainer.append(article(element));
     });
   })
   .catch(error => {
-    console.log("No data was returned", error);
+    console.log("Nothing to see here", error);
   });
 
 function article(data) {
   console.log(data);
 
   const newArticle = document.createElement("div");
-    headline = document.createElement("div");
-    author = document.createElement("div");
-    imgDiv = document.createElement("div");
-    img = document.createElement("img");
-    authorsName = document.createElement("span");
+  headline = document.createElement("div");
+  author = document.createElement("div");
+  imgDiv = document.createElement("div");
+  img = document.createElement("img");
+  authorsName = document.createElement("span");
 
   newArticle.classList.add("card");
   headline.classList.add("headline");
   author.classList.add("author");
   imgDiv.classList.add("img-container");
 
-  newArticle.appendChild(headline);
-  newArticle.appendChild(author);
-  author.appendChild(imgDiv);
-  imgDiv.appendChild(img);
-  author.appendChild(authorsName);
+  newArticle.append(headline);
+  newArticle.append(author);
+  author.append(imgDiv);
+  imgDiv.append(img);
+  author.append(authorsName);
 
   headline.textContent = data.headline;
   img.src = data.authorPhoto;
